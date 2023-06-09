@@ -14,7 +14,7 @@
     "@dcloudio/uni-components": "3.0.0-alpha-3040020220228001",
     "@dcloudio/uni-h5": "3.0.0-alpha-3040020220228001",
     "@fawmi/vue-google-maps": "^0.9.79",
-    "@googlemaps/js-api-loader": "^1.15.2",
+    "@googlemaps/js-api-loader": "^1.16.1",
     "uni-ajax": "2.4.4",
     "vue": "^3.2.33"
   },

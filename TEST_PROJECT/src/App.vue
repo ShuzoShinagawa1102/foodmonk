@@ -2,6 +2,7 @@
 import { onLaunch, onShow, onHide } from "@dcloudio/uni-app";
 import mini from "@/mini";
 
+
 onLaunch(() => {
   console.log("App Launch");
   mini.init();
