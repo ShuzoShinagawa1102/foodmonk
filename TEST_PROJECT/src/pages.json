@@ -1,0 +1,17 @@
+{
+  "pages": [
+    {
+      "path": "pages/home/home",
+      "style": {
+        "navigationBarTitleText": "Foofmonk Home"
+      }
+    }
+    
+  ],
+  "globalStyle": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "テストプロジェクト",
+    "navigationBarBackgroundColor": "#BF242A",
+    "backgroundColor": "#F8F8F8"
+  }
+}
