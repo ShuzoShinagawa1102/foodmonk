@@ -1,27 +1,51 @@
-<template>
+<!-- <template>
   <div>
-   <div ref="map" style="height:500px;width:800px;"></div>
+   <div ref="map" 
+    style="height:100vh;width:100vh;">
+  
   </div>
-  </template>
-  
-  
-  <script>
-  export default {
-    data(){
-      return {
-        map:'',
-      }
+  </div>
+
+</template> -->
+<!-- AIzaSyDDiCLXghb5ALx0FvTuHTw40dO2hn5f3_8 -->
+
+<script>
+
+export default {
+  props: {
+    myLatLng: {
+      type: Object,
+      required: true,
     },
-    mounted(){
-      let timer = setInterval(() => {
-        if(window.google){
-          clearInterval(timer);
-          this.map = new window.google.maps.Map(this.$refs.map, {
-            center: {lat: -34.397, lng: 150.644},
-            zoom: 8
-          });       
-        }
-      },500)
+    zoom: {
+      type: Number,
+      required: true,
+    },
+  },
+  mounted() {
+    if (!window.mapLoadStarted) {
+      window.mapLoadStarted = true;
+      let script = document.createElement('script');
+      script.src =
+        'https://maps.googleapis.com/maps/api/js?key=AIzaSyDDiCLXghb5ALx0FvTuHTw40dO2hn5f3_8&callback=initMap';
+      script.async = true;
+      document.head.appendChild(script);
     }
-  }
-  </script>
+    window.initMap = () => {
+      window.mapLoaded = true;
+    };
+
+    let timer = setInterval(() => {
+      if (window.mapLoaded) {
+        clearInterval(timer);
+        const map = new window.google.maps.Map(this.$refs.map, {
+          center: this.myLatLng,
+          zoom: 4,
+        });
+        new window.google.maps.Marker({ position: this.myLatLng, map });
+      }
+    }, 500);
+  },
+};    
+
+</script>

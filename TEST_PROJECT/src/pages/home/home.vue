@@ -1,9 +1,10 @@
 <template>
-  
   <!-- サーチバー -->
   <page-searchbar />
   <!-- マップ -->
-  <page-map />
+  <div>
+    <google-map :myLatLng="{lat: -25.344, lng: 131.036}" :zoom="4" />
+  </div>
   <!-- ナビゲーションバー -->
   <page-navbar :current="0" @clickBarItem = "redirectToByIndex"/>
 

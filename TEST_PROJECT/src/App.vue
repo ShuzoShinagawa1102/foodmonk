@@ -2,7 +2,6 @@
 import { onLaunch, onShow, onHide } from "@dcloudio/uni-app";
 import mini from "@/mini";
 
-
 onLaunch(() => {
   console.log("App Launch");
   mini.init();
@@ -18,6 +17,6 @@ onHide(() => {
 
 <style>
 page {
-  background: #f8f8f8;
+  background: #fafafa;
 }
 </style>
